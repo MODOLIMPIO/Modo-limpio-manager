@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ingreso - Modo Limpio Manager</title>
+
+<style>
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+
+}
+
+body{
+
+background:linear-gradient(135deg,#198754,#0d4d36);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+.login{
+
+background:white;
+width:90%;
+max-width:400px;
+padding:30px;
+border-radius:15px;
+box-shadow:0px 5px 20px rgba(0,0,0,.3);
+
+}
+
+h1{
+
+text-align:center;
+color:#198754;
+margin-bottom:10px;
+
+}
+
+h3{
+
+text-align:center;
+color:gray;
+margin-bottom:25px;
+
+}
+
+input{
+
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:16px;
+
+}
+
+button{
+
+width:100%;
+padding:15px;
+background:#198754;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
+
+}
+
+button:hover{
+
+background:#146c43;
+cursor:pointer;
+
+}
+
+p{
+
+text-align:center;
+margin-top:20px;
+color:gray;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login">
+
+<h1>🧴 Modo Limpio</h1>
+
+<h3>Manager</h3>
+
+<input
+type="text"
+placeholder="Usuario">
+
+<input
+type="password"
+placeholder="Contraseña">
+
+<button onclick="ingresar()">
+
+INGRESAR
+
+</button>
+
+<p>
+
+Versión 1.0
+
+</p>
+
+</div>
+
+<script>
+
+function ingresar(){
+
+window.location.href="index.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
