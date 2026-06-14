@@ -88,15 +88,76 @@ background:#146c43;
 <label>Observaciones</label>
 
 <textarea rows="5" placeholder="Notas importantes del cliente"></textarea>
-
-<button>
+  
+<button onclick="guardarCliente()">
 
 Guardar Cliente
 
 </button>
 
+<div id="listaClientes" style="margin-top:20px;"></div>
+
 </div>
+<script>
 
-</body>
+function guardarCliente(){
 
-</html>
+let nombre = document.querySelectorAll("input")[0].value;
+let telefono = document.querySelectorAll("input")[1].value;
+let direccion = document.querySelectorAll("input")[2].value;
+
+if(nombre==""){
+alert("Ingrese un nombre");
+return;
+}
+
+let clientes =
+JSON.parse(localStorage.getItem("clientes")) || [];
+
+clientes.push({
+nombre,
+telefono,
+direccion
+});
+
+localStorage.setItem(
+"clientes",
+JSON.stringify(clientes)
+);
+
+mostrarClientes();
+
+}
+
+function mostrarClientes(){
+
+let clientes =
+JSON.parse(localStorage.getItem("clientes")) || [];
+
+let html="<h3>Clientes Guardados</h3>";
+
+clientes.forEach(c=>{
+
+html += `
+<div style="
+padding:10px;
+margin-bottom:10px;
+background:#f0f0f0;
+border-radius:8px;
+">
+<strong>${c.nombre}</strong><br>
+📞 ${c.telefono}<br>
+📍 ${c.direccion}
+</div>
+`;
+
+});
+
+document.getElementById(
+"listaClientes"
+).innerHTML = html;
+
+}
+
+mostrarClie
+  
