@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ticket | Modo Limpio Manager</title>
+
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#eeeeee;
+margin:0;
+padding:20px;
+}
+
+.ticket{
+
+max-width:500px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,.2);
+
+}
+
+h1{
+
+text-align:center;
+color:#198754;
+
+}
+
+hr{
+
+margin:15px 0;
+
+}
+
+table{
+
+width:100%;
+border-collapse:collapse;
+
+}
+
+th,td{
+
+padding:8px;
+text-align:left;
+border-bottom:1px solid #ddd;
+
+}
+
+.total{
+
+margin-top:20px;
+text-align:right;
+font-size:24px;
+font-weight:bold;
+color:#198754;
+
+}
+
+button{
+
+margin-top:20px;
+width:100%;
+padding:15px;
+border:none;
+background:#198754;
+color:white;
+font-size:18px;
+border-radius:8px;
+
+}
+
+.footer{
+
+margin-top:20px;
+text-align:center;
+color:gray;
+font-size:14px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="ticket">
+
+<h1>🧴 MODO LIMPIO</h1>
+
+<p><strong>Cliente:</strong> __________________</p>
+
+<p><strong>Fecha:</strong> ____ / ____ / ______</p>
+
+<hr>
+
+<table>
+
+<tr>
+
+<th>Producto</th>
+
+<th>Cant.</th>
+
+<th>Total</th>
+
+</tr>
+
+<tr>
+
+<td>---------------</td>
+
+<td>0</td>
+
+<td>$0</td>
+
+</tr>
+
+</table>
+
+<div class="total">
+
+TOTAL: $0
+
+</div>
+
+<button onclick="window.print()">
+
+🖨️ Imprimir Ticket
+
+</button>
+
+<div class="footer">
+
+Gracias por confiar en Modo Limpio
+
+</div>
+
+</div>
+
+</body>
+
+</html>
