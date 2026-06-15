@@ -169,6 +169,21 @@ color:gray;
 Modo Limpio Manager © 2026
 
 </footer>
+<script>
 
+let ventas = JSON.parse(localStorage.getItem("ventas")) || [];
+
+let totalVentas = 0;
+
+ventas.forEach(v => {
+  totalVentas += Number(v.total);
+});
+
+document.querySelectorAll("h2")[0].innerText = "$" + totalVentas;
+document.querySelectorAll("h2")[1].innerText = ventas.length;
+document.querySelectorAll("h2")[2].innerText = ventas.length;
+document.querySelectorAll("h2")[3].innerText = "$" + totalVentas;
+
+</script>
 </body>
 </html>
