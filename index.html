@@ -106,7 +106,7 @@ color:gray;
 
 <h3>Ventas del día</h3>
 
-<h2>$0</h2>
+<h2 id="ventasDia">$0</h2>
 
 </div>
 
@@ -116,7 +116,7 @@ color:gray;
 
 <h3>Pedidos</h3>
 
-<h2>0</h2>
+<h2 id="pedidos">0</h2>
 
 </div>
 
@@ -126,7 +126,7 @@ color:gray;
 
 <h3>Clientes</h3>
 
-<h2>0</h2>
+<h2 id="clientes">0</h2>
 
 </div>
 
@@ -136,7 +136,7 @@ color:gray;
 
 <h3>Ganancia</h3>
 
-<h2>$0</h2>
+<h2 id="ganancia">$0</h2>
 
 </div>
 
@@ -179,10 +179,10 @@ ventas.forEach(v => {
   totalVentas += Number(v.total);
 });
 
-document.querySelectorAll("h2")[0].innerText = "$" + totalVentas;
-document.querySelectorAll("h2")[1].innerText = ventas.length;
-document.querySelectorAll("h2")[2].innerText = ventas.length;
-document.querySelectorAll("h2")[3].innerText = "$" + totalVentas;
+document.getElementById("ventasDia").innerText = "$" + totalVentas;
+document.getElementById("pedidos").innerText = ventas.length;
+document.getElementById("clientes").innerText = ventas.length;
+document.getElementById("ganancia").innerText = "$" + totalVentas;
 
 </script>
 </body>
