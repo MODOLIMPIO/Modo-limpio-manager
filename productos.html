@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Productos - Modo Limpio Manager</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#f4f4f4;
+padding:20px;
+}
+
+h1{
+color:#198754;
+}
+
+.formulario{
+background:white;
+padding:15px;
+border-radius:10px;
+margin-bottom:20px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:10px;
+border:1px solid #ccc;
+border-radius:5px;
+box-sizing:border-box;
+}
+
+button{
+background:#198754;
+color:white;
+border:none;
+padding:12px;
+border-radius:5px;
+width:100%;
+font-size:16px;
+}
+
+.producto{
+background:white;
+padding:10px;
+margin-bottom:10px;
+border-radius:8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>📦 Productos</h1>
+
+<div class="formulario">
+
+<input type="text" id="nombre" placeholder="Nombre del producto">
+
+<select id="categoria">
+<option>Líquido</option>
+<option>Polvo</option>
+<option>Pastillas</option>
+<option>Otros</option>
+</select>
+
+<input type="number" id="costo" placeholder="Precio de costo">
+
+<input type="number" id="venta" placeholder="Precio de venta">
+
+<input type="number" id="stock" placeholder="Stock">
+
+<button onclick="guardarProducto()">
+Guardar Producto
+</button>
+
+</div>
+
+<div id="listaProductos"></div>
+
+<script>
+
+function guardarProducto(){
+
+let producto={
+nombre:document.getElementById("nombre").value,
+categoria:document.getElementById("categoria").value,
+costo:document.getElementById("costo").value,
+venta:document.getElementById("venta").value,
+stock:document.getElementById("stock").value
+};
+
+let productos=
+JSON.parse(localStorage.getItem("productos")) || [];
+
+productos.push(producto);
+
+localStorage.setItem(
+"productos",
+JSON.stringify(productos)
+);
+
+mostrarProductos();
+
+document.getElementById("nombre").value="";
+document.getElementById("costo").value="";
+document.getElementById("venta").value="";
+document.getElementById("stock").value="";
+}
+
+function mostrarProductos(){
+
+let productos=
+JSON.parse(localStorage.getItem("productos")) || [];
+
+let html="<h2>Productos Guardados</h2>";
+
+productos.forEach(p=>{
+
+html += `
+<div class="producto">
+<strong>${p.nombre}</strong><br>
+📦 ${p.categoria}<br>
+💲 Venta: $${p.venta}<br>
+📊 Stock: ${p.stock}
+</div>
+`;
+
+});
+
+document.getElementById("listaProductos").innerHTML=html;
+
+}
+
+mostrarProductos();
+
+</script>
+
+</body>
+</html>
